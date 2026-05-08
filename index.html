@@ -3,62 +3,68 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Design Sobrancelhas</title>
+    <title>Sobrancelhas Perfeitas</title>
     <link rel="stylesheet" href="style.css" />
   </head>
+
   <body>
-    <!-- CABEÇALHO -->
-    <header>
-      <section class="cabecalho">
-        <img src="assets/imagens/foto perfil.png" alt="foto-designer" class="img-cabecalho">
+    <!-- HEADER -->
+    <header class="header">
+      <div class="container cabecalho">
+        <img
+          src="assets/imagens/foto-perfil.png"
+          alt="Designer de sobrancelhas"
+          class="avatar"
+        />
 
-        <div class="texto-cabecalho">
+        <div class="cabecalho-texto">
           <h1>Sobrancelhas Perfeitas</h1>
-
-          <p>Realce sua beleza natural</p>
+          <p>Realce sua beleza natural com design profissional</p>
         </div>
-      </section>
+      </div>
     </header>
-    <main>
-      <section class="corpo">
+
+    <!-- CONTEÚDO -->
+    <main class="container">
+      <section class="servicos">
         <h2>Nossos Serviços</h2>
 
-        <div class="card">
+        <article class="card">
           <img
             src="assets/imagens/photo-1487412947147-5cebf100ffc2.jpg"
-            alt="Sobrancelhas"
+            alt="Design de sobrancelhas sendo realizado"
+            class="card-img"
           />
-          <div class="card-conteudo">
-            <h3>Design de Sobrancelhas</h3>
-            <p>Modelagem completa com pinça, medição e finalização</p>
 
-            <div>
-              <div class="info">
-                <div class="tempo">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 28
-                    "
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="lucide lucide-clock w-4 h-4 mr-1"
-                  >
-                    <circle cx="12" cy="12" r="10"></circle>
-                    <polyline points="12 6 12 12 16 14"></polyline>
-                  </svg>
-                  <span>30 min</span>
-                </div>
-                <strong>R$ 50,00</strong>
+          <div class="card-body">
+            <h3>Design de Sobrancelhas</h3>
+            <p>Modelagem completa com medição, pinça e finalização perfeita.</p>
+
+            <div class="card-info">
+              <div class="tempo">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                <span>30 min</span>
               </div>
+
+              <strong class="preco">R$ 50,00</strong>
             </div>
-            <button>Agendar Serviço</button>
+
+            <button class="btn">Agendar agora</button>
           </div>
-        </div>
+        </article>
       </section>
     </main>
   </body>

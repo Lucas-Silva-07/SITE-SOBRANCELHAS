@@ -67,6 +67,11 @@ body {
   max-width: 400px;
 }
 
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+}
+
 .card-img {
   width: 100%;
   height: 220px;
@@ -104,7 +109,7 @@ body {
 }
 
 .preco {
-  color: #a77b7b;
+  color: #068506;
   font-size: 16px;
 }
 
@@ -124,4 +129,11 @@ body {
 .btn:hover {
   background: #8c6666;
   transform: scale(1.02);
+}
+
+.grid-servicoes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
 }

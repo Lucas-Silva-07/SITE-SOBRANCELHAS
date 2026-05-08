@@ -1,0 +1,82 @@
+/* Global */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    color: #000;
+    line-height: 1.4;
+    font-size: 1.6rem;
+    background-color: rgb(244, 245, 247);
+}
+
+h1 {
+    font-size: 3.0rem;
+    font-weight: 600;
+    line-height: 1;
+}
+
+h2 {
+    font-size: 2.4rem;
+    font-weight: 500;
+    color: oklch(0.21 0.03 264.66 / 1);
+    line-height: 1.1;
+}
+
+h3 {
+    font-size: 2.0rem;
+    font-weight: 500;
+    color: oklch(0.21 0.03 264.66 / 1);
+    line-height: 1.1;
+}
+
+p {
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: oklch(0.45 0.03 256.8 / 1);
+    line-height: 1.1;
+}
+
+/* Cabeçalho */
+
+/* .cabecalho {
+  position: sticky;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  padding: 1.6rem 3.12rem;
+  box-shadow: 0 0.21rem 0.4rem rgba(0, 0, 0, 0.1);
+} */
+
+header {
+  background-color: #fff;
+  padding: 28px 0;
+  border-bottom: 1px solid #fff;
+}
+
+.header-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header-container h1 {
+  font-weight: 700;
+  color: #001b44;
+  font-family: Arial, sans-serif;
+  margin-bottom: 8px;
+}
+
+/* Subtítulo */
+.header-container p {
+  font-size: 1.6rem;
+  color: #4a4a4a;
+  font-family: Arial, sans-serif;
+}

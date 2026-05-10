@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agendamento</title>
+  </head>
+  <body>
+    <div>
+      <h1>Agendar (Design de Sobrancelhas)</h1>
+
+      <p>(30) min • R$ (50,00)</p>
+
+      <form action="">
+        <div>
+          <label for="name">Nome:</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Seu nome"
+            required
+          />
+        </div>
+
+        <div>
+          <label for="telefone">Telefone:</label>
+          <input
+            type="tel"
+            id="telefone"
+            name="telefone"
+            placeholder="(00) 90000-0000"
+            required
+          />
+        </div>
+
+        <div>
+          <label for="date">Data:</label>
+          <input type="date" id="date" name="date" required />
+        </div>
+
+        <label>Horário</label>
+
+        <div class="horarios">
+          <button class="horario">09:00</button>
+          <button class="horario">10:00</button>
+          <button class="horario">11:00</button>
+          <button class="horario">14:00</button>
+          <button class="horario">15:00</button>
+          <button class="horario">16:00</button>
+        </div>
+
+        <div class="pix">
+          <strong>Pagamento via PIX</strong>
+
+          <p>Chave PIX:</p>
+
+          <span id="pixKey">11999999999</span>
+        </div>
+
+        <div>
+          <button>Cancelar</button>
+          <button>Confirmar</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

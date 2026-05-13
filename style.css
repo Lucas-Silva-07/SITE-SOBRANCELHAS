@@ -11,6 +11,23 @@ body {
   color: #222;
 }
 
+/* BOTÃO */
+.btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: #a77b7b;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #8c6666;
+  transform: scale(1.02);
+}
 
 /* ===== HOME ===== */
 
@@ -116,24 +133,6 @@ body {
   font-size: 16px;
 }
 
-/* BOTÃO */
-.btn {
-  width: 100%;
-  padding: 12px;
-  border: none;
-  border-radius: 8px;
-  background: #a77b7b;
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.btn:hover {
-  background: #8c6666;
-  transform: scale(1.02);
-}
-
 .grid-servicoes {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -151,8 +150,13 @@ input {
   border-radius: 10px;
   border: 1px solid #ccc;
   padding: 10px;
-
 }
+
+input:focus{
+  border-color:#c084fc;
+  box-shadow:0 0 0 3px rgba(192,132,252,0.2);
+}
+
 .card-agendamento {
   background: #fff;
   width: 450px;
@@ -178,11 +182,28 @@ input {
   cursor: pointer;
 }
 
-.horario:hover{
+.horario:hover {
       background:#e0d4ff;
     }
 
-.ativo{
+.horario.ativo {
   background:#d946ef;
   color:#fff;
+}
+
+.botoes {
+  display: flex;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.cancelar {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  color: #1f2a44;
+}
+
+.cancelar:hover {
+  background: #ffffff;
+  transform: scale(1.02);
 }

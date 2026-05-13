@@ -157,6 +157,15 @@ input:focus{
   box-shadow:0 0 0 3px rgba(192,132,252,0.2);
 }
 
+.corpo {
+  background:#000;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+  font-family:Arial;
+}
+
 .card-agendamento {
   background: #fff;
   width: 450px;
@@ -218,5 +227,5 @@ input:focus{
 .pix p{
   margin-top:8px;
   font-weight:bold;
-  color:#d946ef;
+  color:#a77b7b;
 }

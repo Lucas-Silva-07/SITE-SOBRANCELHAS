@@ -88,7 +88,7 @@ body {
 }
 
 .card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-1px);
   box-shadow: 0 15px 30px rgba(0,0,0,0.12);
 }
 
@@ -154,7 +154,7 @@ input {
 
 input:focus{
   border-color:#c084fc;
-  box-shadow:0 0 0 3px rgba(192,132,252,0.2);
+  box-shadow:0 0 0 3px #a77b7b4d;
 }
 
 .corpo {
@@ -192,7 +192,7 @@ input:focus{
 }
 
 .horario:hover {
-      background:#e0d4ff;
+      background:#a77b7b54;
     }
 
 .horario.ativo {

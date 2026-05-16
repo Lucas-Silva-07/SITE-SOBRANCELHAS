@@ -173,6 +173,10 @@ input:focus{
   border-radius: 20px;
 }
 
+#tituloAgendamento {
+  font-weight: 500;
+}
+
 .info {
   margin:10px 0 20px;
 }

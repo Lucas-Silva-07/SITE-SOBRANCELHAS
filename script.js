@@ -24,15 +24,37 @@ botoes.forEach(botao => {
   });
 });
 
-// pegar os dados na pagina de agendamento
+// ---PAGINA DE AGENDAMENTO---
+
+// pegar os dados salvo e atribui em variaveis 
 const tituloAgendamento = document.getElementById('tituloAgendamento');
 
 const tempoValor = document.getElementById('tempoValor');
 
+// valida se pegou os dados salvo no navegador
 if (tituloAgendamento) {
   const dados = JSON.parse(localStorage.getItem('agendamento'));
+
+  // valida se pegou os dados
   if (dados) {
+    // coloca os textos no formulario
     tituloAgendamento.textContent = `${dados.titulo}`;
     tempoValor.textContent = `${dados.tempo} • ${dados.valor}`
   }
 }
+
+// lista de botões de horários
+const horarioBotoes = document.querySelectorAll('.horario');
+
+horarioBotoes.forEach(horario => {
+
+  // adicionar evento de click
+  horario.addEventListener('click', (event) => {
+
+    // remove ativo de todos botões
+    horarioBotoes.forEach(b => b.classList.remove('ativo'));
+
+    // adiciona o ativo no botão clicado
+    horario.classList.add('ativo');
+  });
+});

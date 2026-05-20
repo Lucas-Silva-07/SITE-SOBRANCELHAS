@@ -8,7 +8,7 @@ botoes.forEach(botao => {
   botao.addEventListener('click', (event) => {
 
     // pega o card que foi clicado
-    const card = event.target.closest('.card');
+    const card = botao.closest('.card');
 
     // criando variaveis com os textos 
     const titulo = card.querySelector('h3').textContent;
@@ -68,11 +68,17 @@ horarioBotoes.forEach(horario => {
 
 function enviarWhatsapp(){
   // dados preenchido no formulário
-  const nome = document.getElementById("nome").value;
+  const nome = document.getElementById("name").value;
 
   const telefone = document.getElementById("telefone").value;
 
-  const data = document.getElementById("data").value;
+  const data = document.getElementById("date").value;
+  
+  // valida se selecionou um horário
+  if(horarioSelecionado === ""){
+    alert("Selecione um horário!");
+    return;
+  }
 
   // numéro da Designer 
   const numeroDesigner = "5511999999999";
@@ -93,5 +99,9 @@ Pagamento PIX realizado.`;
   const url =
 `https://wa.me/${numeroDesigner}?text=${encodeURIComponent(mensagem)}`;
 
-  window.open(url, "_blank");
+  // window.open(url, "_blank");
+
+  alert("Horário agendado!");
 }
+  // conecta o botão à função
+document.getElementById("btnConfirmar").addEventListener("click", enviarWhatsapp);

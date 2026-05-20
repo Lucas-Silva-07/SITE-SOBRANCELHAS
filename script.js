@@ -37,11 +37,13 @@ if (tituloAgendamento) {
 
   // valida se pegou os dados
   if (dados) {
-    // coloca os textos no formulario
+    // coloca os textos no formulário
     tituloAgendamento.textContent = `${dados.titulo}`;
     tempoValor.textContent = `${dados.tempo} • ${dados.valor}`
   }
 }
+// ---BOTÕES DE HORARIO---
+let horarioSelecionado = ""
 
 // lista de botões de horários
 const horarioBotoes = document.querySelectorAll('.horario');
@@ -56,5 +58,40 @@ horarioBotoes.forEach(horario => {
 
     // adiciona o ativo no botão clicado
     horario.classList.add('ativo');
+
+    // hora do botão selecionado
+    horarioSelecionado = horario.textContent;
   });
 });
+
+// ---MENSAGEM PARA WHATSAPP---
+
+function enviarWhatsapp(){
+  // dados preenchido no formulário
+  const nome = document.getElementById("nome").value;
+
+  const telefone = document.getElementById("telefone").value;
+
+  const data = document.getElementById("data").value;
+
+  // numéro da Designer 
+  const numeroDesigner = "5511999999999";
+
+  // Mensagem a ser enviada para a designer
+  const mensagem =
+`Olá, gostaria de confirmar um agendamento:
+
+Nome: ${nome}
+Telefone: ${telefone}
+Serviço: Design de Sobrancelhas
+Data: ${data}
+Horário: ${horarioSelecionado}
+
+Pagamento PIX realizado.`;
+
+  // link para entrar no whatsapp ja com mensagem escrita
+  const url =
+`https://wa.me/${numeroDesigner}?text=${encodeURIComponent(mensagem)}`;
+
+  window.open(url, "_blank");
+}

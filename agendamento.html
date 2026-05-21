@@ -8,10 +8,11 @@
   </head>
   <body class="corpo">
     <div class="card-agendamento">
-    
-      <h1>Agendar (Design de Sobrancelhas)</h1>
+      <h1>Agendar:</h1>
+      
+      <h2 id="tituloAgendamento"></h2>
 
-      <p class="info">(30) min • R$ (50,00)</p>
+      <p class="info" id="tempoValor"></p>
 
       <form action="">
         <div>
@@ -61,10 +62,11 @@
         </div>
 
         <div class="botoes">
-          <button class="btn cancelar">Cancelar</button>
-          <button class="btn">Confirmar</button>
+          <button class="btn cancelar" onclick="window.location.href='index.html'">Cancelar</button>
+          <button class="btn" id="btnConfirmar">Confirmar</button>
         </div>
       </form>
     </div>
+    <script src="script.js"></script>
   </body>
 </html>

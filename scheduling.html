@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Agendamento</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
   </head>
   <body class="corpo">
     <div class="card-agendamento">
@@ -14,7 +14,7 @@
 
       <p class="info" id="tempoValor"></p>
 
-      <form action="">
+      <form id="form" action="">
         <div>
           <label for="name">Nome:</label>
           <input
@@ -44,13 +44,8 @@
 
         <label>Horário</label>
 
-        <div class="horarios">
-          <button type="button" class="horario">09:00</button>
-          <button type="button" class="horario">10:00</button>
-          <button type="button" class="horario">11:00</button>
-          <button type="button" class="horario">14:00</button>
-          <button type="button" class="horario">15:00</button>
-          <button type="button" class="horario">16:00</button>
+        <div id="container-botoes" class="horarios">
+
         </div>
 
         <div class="pix">
@@ -63,10 +58,10 @@
 
         <div class="botoes">
           <button class="btn cancelar" onclick="window.location.href='index.html'">Cancelar</button>
-          <button class="btn" id="btnConfirmar">Confirmar</button>
+          <button type="submit" class="btn" id="btnConfirmar">Confirmar</button>
         </div>
       </form>
     </div>
-    <script src="script.js"></script>
+    <script src="js/scheduling.js"></script>
   </body>
 </html>

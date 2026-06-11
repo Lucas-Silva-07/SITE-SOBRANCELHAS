@@ -1,29 +1,3 @@
-// faz uma lista com todos os itens com classe = btn
-const botoes = document.querySelectorAll('.btn');
-
-// percorrendo a lista de botões
-botoes.forEach(botao => {
-
-  // adicionando o evento de click
-  botao.addEventListener('click', (event) => {
-
-    // pega o card que foi clicado
-    const card = botao.closest('.card');
-
-    // criando variaveis com os textos 
-    const titulo = card.querySelector('h3').textContent;
-    const tempo = card.querySelector('span').textContent;
-    const valor = card.querySelector('strong').textContent;
-
-    // salva os dados no navegador
-    const dados = { titulo, tempo, valor };
-    localStorage.setItem('agendamento', JSON.stringify(dados));
-
-    // vai para outra página
-    window.location.href = 'agendamento.html';
-  });
-});
-
 // ---PAGINA DE AGENDAMENTO---
 
 // pegar os dados salvo e atribui em variaveis 
@@ -33,7 +7,7 @@ const tempoValor = document.getElementById('tempoValor');
 
 // valida se pegou os dados salvo no navegador
 if (tituloAgendamento) {
-  const dados = JSON.parse(localStorage.getItem('agendamento'));
+  const dados = JSON.parse(sessionStorage.getItem('agendamento'));
 
   // valida se pegou os dados
   if (dados) {
@@ -43,25 +17,41 @@ if (tituloAgendamento) {
   }
 }
 // ---BOTÕES DE HORARIO---
-let horarioSelecionado = ""
+let horarioSelecionado = "";
 
-// lista de botões de horários
-const horarioBotoes = document.querySelectorAll('.horario');
+const horariosDoDia = ["09:00", "10:00", "11:00", "14:00", "15:00", "16:00"];
+const horariosOcupados = []; // Vem do banco de dados
 
-horarioBotoes.forEach(horario => {
+const containerHorarios = document.getElementById("container-botoes");
 
-  // adicionar evento de click
-  horario.addEventListener('click', (event) => {
+// Gerar botões de horários
+horariosDoDia.forEach(horario => {
+  const botao = document.createElement("button");
+  botao.classList.add("horario");
+  botao.innerText = horario;
 
-    // remove ativo de todos botões
-    horarioBotoes.forEach(b => b.classList.remove('ativo'));
+  // Desabilitar horário ocupado
+  if (horariosOcupados.includes(horario)) {
+    botao.disabled = true;
+  } else {
+    // Evento de clique
+    botao.addEventListener("click", () => {
+      // Remove a classe ativo de todos os botões
+      document.querySelectorAll(".horario").forEach(b =>
+        b.classList.remove("ativo")
+      );
 
-    // adiciona o ativo no botão clicado
-    horario.classList.add('ativo');
+      // Adiciona a classe ativo ao botão clicado
+      botao.classList.add("ativo");
 
-    // hora do botão selecionado
-    horarioSelecionado = horario.textContent;
-  });
+      // Salva o horário selecionado
+      horarioSelecionado = horario;
+
+      console.log("Horário selecionado:", horarioSelecionado);
+    });
+  }
+
+  containerHorarios.appendChild(botao);
 });
 
 // ---MENSAGEM PARA WHATSAPP---
@@ -105,3 +95,4 @@ Pagamento PIX realizado.`;
 }
   // conecta o botão à função
 document.getElementById("btnConfirmar").addEventListener("click", enviarWhatsapp);
+

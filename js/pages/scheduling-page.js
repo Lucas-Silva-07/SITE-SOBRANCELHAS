@@ -1,4 +1,4 @@
-import { createAppointment } from "../api/appointments";
+import { createAppointment } from "../api/appointments.js";
 
 // ---PAGINA DE AGENDAMENTO---
 
@@ -30,6 +30,7 @@ const containerHorarios = document.getElementById("container-botoes");
 // gerar botões de horários
 horariosDoDia.forEach(horario => {
   const botao = document.createElement("button");
+  botao.type = 'button';
   botao.classList.add("horario");
   botao.innerText = horario;
 
@@ -105,12 +106,12 @@ form.addEventListener('submit', async (event) => {
     const client = {
         name: nome,
         phone: telefone,
-        date,
+        date: data,
         hour: horarioSelecionado,
         price: valor,
-        service
+        service: service
     };
-
+    console.log(client)
     try {
         const appointment = await createAppointment(client);
 

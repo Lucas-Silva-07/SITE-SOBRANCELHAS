@@ -33,7 +33,7 @@ inputData.addEventListener('change', async (event) => {
 
   horariosOcupados = [];
 
-  const hoursList = await getDateHours({date: data});
+  const hoursList = await getDateHours(data);
 
   hoursList.forEach(hour => {
     horariosOcupados.push(hour)
@@ -41,6 +41,8 @@ inputData.addEventListener('change', async (event) => {
 
 // gerar botões de horários
 const containerHorarios = document.getElementById("container-botoes");
+
+containerHorarios.innerHTML = ""
 
 horariosDoDia.forEach(horario => {
   const botao = document.createElement("button");

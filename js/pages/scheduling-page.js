@@ -1,4 +1,4 @@
-import { createAppointment } from "../api/appointments.js";
+import { createAppointment, getDateHours } from "../api/appointments.js";
 
 // ---PAGINA DE AGENDAMENTO---
 
@@ -19,15 +19,29 @@ if (tituloAgendamento) {
     tempoValor.textContent = `${dados.tempo} • ${dados.valor}`
   }
 }
-// ---BOTÕES DE HORARIO---
+
+// ---CRIAR BOTÕES DE HORÁRIOS
 let horarioSelecionado = "";
 
 const horariosDoDia = ["09:00", "10:00", "11:00", "14:00", "15:00", "16:00"];
-const horariosOcupados = []; // Vem do banco de dados
+let horariosOcupados = []; // Vem do banco de dados
+const inputData = document.getElementById('date');
 
-const containerHorarios = document.getElementById("container-botoes");
+// Evento quando selecionar a data
+inputData.addEventListener('change', async (event) => {
+  const data = event.target.value;
+
+  horariosOcupados = [];
+
+  const hoursList = await getDateHours({date: data});
+
+  hoursList.forEach(hour => {
+    horariosOcupados.push(hour)
+  });
 
 // gerar botões de horários
+const containerHorarios = document.getElementById("container-botoes");
+
 horariosDoDia.forEach(horario => {
   const botao = document.createElement("button");
   botao.type = 'button';
@@ -53,9 +67,9 @@ horariosDoDia.forEach(horario => {
 
       console.log("Horário selecionado:", horarioSelecionado);
     });
-  }
-
+  };
   containerHorarios.appendChild(botao);
+  });  
 });
 
 // ---MENSAGEM PARA WHATSAPP---
@@ -87,23 +101,23 @@ Pagamento PIX realizado.`;
   window.open(url, "_blank");
 }
 
-// evento de confirmar horário
+// ---CONFIRMAR AGENDAMENTO---
 form.addEventListener('submit', async (event) => {
-    event.preventDefault();
-
-    if (!horarioSelecionado) {
-        alert("Selecione um horário!");
-        return;
-    }
-    // dados preenchido no formulário
-    const nome = document.getElementById("name").value;
-    const telefone = document.getElementById("telefone").value;
-    const data = document.getElementById("date").value;
-
-    const valor = Number(dados.valor.match(/\d+/g)[0]);
-    const service = dados.titulo;
-
-    const client = {
+  event.preventDefault();
+  
+  if (!horarioSelecionado) {
+    alert("Selecione um horário!");
+    return;
+  };
+  // dados preenchido no formulário
+  const nome = document.getElementById("name").value;
+  const telefone = document.getElementById("telefone").value;
+  const data = document.getElementById("date").value;
+  
+  const valor = Number(dados.valor.match(/\d+/g)[0]);
+  const service = dados.titulo;
+  
+  const client = {
         name: nome,
         phone: telefone,
         date: data,
@@ -131,4 +145,3 @@ form.addEventListener('submit', async (event) => {
         alert("Erro ao salvar agendamento.");
     }
 });
-

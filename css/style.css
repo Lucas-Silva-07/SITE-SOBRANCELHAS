@@ -181,6 +181,11 @@ input:focus{
   margin:10px 0 20px;
 }
 
+.instrucao-horario {
+  font-size: 14px;
+  color: #929292;
+}
+
 .horarios {
   display: grid;
   grid-template-columns:repeat(3,1fr);

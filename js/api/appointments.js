@@ -11,3 +11,10 @@ export function createAppointment(data) {
   });
 }
 
+// listar horários por data 
+export function getDateHours(data) {
+  return request("/scheduleAt", {
+    method: "POST",
+    body: JSON.stringify(data)
+  })
+}
